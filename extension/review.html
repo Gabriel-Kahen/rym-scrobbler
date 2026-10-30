@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Review scrobbles — RYM Scrobbler</title>
+  <link rel="stylesheet" href="review.css">
+</head>
+<body>
+  <main>
+    <header><span aria-hidden="true">♫</span><h1 id="title">Review your listen</h1></header>
+    <form id="review-form" novalidate>
+      <div class="album-details">
+        <label><span>Album</span><input id="album" required maxlength="300"></label>
+        <label><span>Artist</span><input id="artist" required maxlength="300"></label>
+      </div>
+      <div class="selection-controls"><span id="selection-count" aria-live="polite"></span><div><button type="button" id="select-all">Select all</button><button type="button" id="clear-selection">Clear</button></div></div>
+      <div id="tracks"></div>
+      <label class="finish-time"><span>Listen finished</span><input type="datetime-local" id="finish-time" required step="1"></label>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div class="actions"><button type="button" id="cancel" class="secondary">Cancel</button><button type="submit" id="submit" disabled>Scrobble to Last.fm</button></div>
+    </form>
+  </main>
+  <script src="review.js"></script>
+</body>
+</html>

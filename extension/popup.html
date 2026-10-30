@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="popup.css"><title>RYM Scrobbler</title></head>
+<body><header><span class="mark">♫</span><div><h1>RYM Scrobbler</h1><p>Record a listen from Rate Your Music.</p></div></header>
+<main>
+<section id="connected" hidden><div class="connected"><span class="dot"></span><div><b>Connected to Last.fm</b><p id="username"></p></div></div><button id="disconnect" class="secondary">Disconnect</button></section>
+<section id="setup"><h2>Connect Last.fm</h2><p>Sign in and approve RYM Scrobbler on Last.fm. Your password stays with Last.fm.</p><p class="disclosure">When you scrobble, your selected track details and an encrypted connection credential are sent to our Cloudflare Worker, which sends the scrobbles to Last.fm. Your Last.fm username and encrypted connection credential are stored in this browser.</p><label class="consent"><input type="checkbox" id="consent"> <span>I agree to this data use.</span></label><button id="authorize">Connect Last.fm</button><div class="steps" id="authSteps" hidden><p>After approving on Last.fm, return here and finish connecting.</p><button id="finish" class="secondary">Finish connecting</button></div></section>
+<p id="status" role="status" aria-live="polite"></p><p class="hint">Open an RYM release page to scrobble a track or an album you have listened to.</p>
+</main><script src="popup.js"></script></body></html>

@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "RYM Scrobbler",
+  "version": "0.5.2",
+  "description": "Scrobble album tracks from Rate Your Music to Last.fm.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://rym-scrobbler.gabekahen.workers.dev/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "RYM Scrobbler",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://rateyourmusic.com/release/*",
+        "https://www.rateyourmusic.com/release/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "minimum_chrome_version": "102",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "review.html"
+      ],
+      "matches": [
+        "https://rateyourmusic.com/*",
+        "https://www.rateyourmusic.com/*"
+      ]
+    }
+  ]
+}
